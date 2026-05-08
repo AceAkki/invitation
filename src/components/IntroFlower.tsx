@@ -12,6 +12,7 @@ import FlowerImg8 from "../assets/flower8.png";
 import leafImg from "../assets/leaf.png";
 
 import RoyalWeddingReveal from "./TitleReveal";
+import useResponsiveValues from "../hooks/useResponsiveValues";
 
 // Individual Flower Component for easier positioning
 const FlyingFlower = ({
@@ -97,6 +98,9 @@ const SwayFlower = ({ src, xPos = "10%", speed = -500, yOffset = 0 }) => {
 };
 
 export default function IntroFlower() {
+  const { width, height } = useResponsiveValues();
+  let isMobile = width < 1080;
+  let isDesktop = width > 1080;
   return (
     <div>
       {/* Introduction Section */}
@@ -112,7 +116,12 @@ export default function IntroFlower() {
         }}
       >
         {/* --- EXISTING GROUPS (Top & Mid-Top) --- */}
-        <SwayFlower src={FlowerImg1} xPos="3%" speed={-800} yOffset={-150} />
+        <SwayFlower
+          src={FlowerImg1}
+          xPos="3vh"
+          speed={-800}
+          yOffset={height * -0.15}
+        />
         <SwayFlower src={FlowerImg7} xPos="94%" speed={-1100} yOffset={-50} />
         <SwayFlower src={leafImg} xPos="18%" speed={-1400} yOffset={100} />
         <SwayFlower src={FlowerImg4} xPos="82%" speed={-950} yOffset={-250} />
@@ -125,16 +134,36 @@ export default function IntroFlower() {
         {/* These fill the void around the 400px - 600px vertical mark */}
         <SwayFlower src={FlowerImg6} xPos="15%" speed={-1100} yOffset={550} />
         <SwayFlower src={FlowerImg3} xPos="30%" speed={-1450} yOffset={480} />
-        <SwayFlower src={leafImg} xPos="55%" speed={-900} yOffset={520} />
+        <SwayFlower
+          src={leafImg}
+          xPos={isMobile ? "55%" : "8%"}
+          speed={-900}
+          yOffset={520}
+        />
         <SwayFlower src={FlowerImg1} xPos="75%" speed={-1300} yOffset={580} />
-        <SwayFlower src={FlowerImg5} xPos="40%" speed={-1050} yOffset={650} />
+        <SwayFlower
+          src={FlowerImg5}
+          xPos="40%"
+          speed={-1050}
+          yOffset={isMobile ? 550 : 350}
+        />
 
         {/* --- NEW Group 6: The "Bottom Depth" (Coming from way down) --- */}
         {/* These ensure that as the user scrolls, new flowers keep appearing from the bottom */}
         <SwayFlower src={FlowerImg7} xPos="10%" speed={-1600} yOffset={900} />
-        <SwayFlower src={FlowerImg2} xPos="22%" speed={-1200} yOffset={1100} />
+        <SwayFlower
+          src={FlowerImg2}
+          xPos="22%"
+          speed={-1200}
+          yOffset={isMobile ? 500 : 1100}
+        />
         <SwayFlower src={leafImg} xPos="45%" speed={-1800} yOffset={950} />
-        <SwayFlower src={FlowerImg8} xPos="60%" speed={-1350} yOffset={1200} />
+        <SwayFlower
+          src={FlowerImg8}
+          xPos="60%"
+          speed={-1350}
+          yOffset={isMobile ? 750 : 1200}
+        />
         <SwayFlower src={FlowerImg4} xPos="80%" speed={-1500} yOffset={1050} />
         <SwayFlower src={FlowerImg1} xPos="92%" speed={-1100} yOffset={980} />
 
@@ -143,8 +172,13 @@ export default function IntroFlower() {
         <SwayFlower src={FlowerImg8} xPos="42%" speed={-850} yOffset={500} />
         <SwayFlower src={FlowerImg6} xPos="58%" speed={-1700} yOffset={-100} />
         <SwayFlower src={FlowerImg1} xPos="65%" speed={-1150} yOffset={450} />
-        <SwayFlower src={FlowerImg4} xPos="48%" speed={-1400} yOffset={800} />
-        <SwayFlower src={FlowerImg2} xPos="5%" speed={-900} yOffset={700} />
+        <SwayFlower src={FlowerImg4} xPos="48%" speed={-1400} yOffset={400} />
+        <SwayFlower
+          src={FlowerImg2}
+          xPos="5%"
+          speed={-900}
+          yOffset={isMobile ? 500 : 700}
+        />
         <SwayFlower src={leafImg} xPos="90%" speed={-1200} yOffset={850} />
 
         <SwayFlower src={FlowerImg1} xPos="2%" speed={-1100} yOffset={1600} />
@@ -157,7 +191,12 @@ export default function IntroFlower() {
         <SwayFlower src={FlowerImg5} xPos="22%" speed={-1000} yOffset={1700} />
         <SwayFlower src={FlowerImg8} xPos="26%" speed={-1350} yOffset={1950} />
         <SwayFlower src={FlowerImg6} xPos="30%" speed={-1150} yOffset={1620} />
-        <SwayFlower src={FlowerImg3} xPos="34%" speed={-1600} yOffset={1850} />
+        <SwayFlower
+          src={FlowerImg3}
+          xPos={isMobile ? "34%" : "80%"}
+          speed={-1600}
+          yOffset={1850}
+        />
 
         {/* Group C: Center-Left (Dense Cluster) */}
         <SwayFlower src={FlowerImg6} xPos="38%" speed={-900} yOffset={2000} />
@@ -167,9 +206,19 @@ export default function IntroFlower() {
 
         {/* Group D: Center-Right (Dense Cluster) */}
         <SwayFlower src={FlowerImg2} xPos="53%" speed={-1200} yOffset={1950} />
-        <SwayFlower src={FlowerImg8} xPos="57%" speed={-1550} yOffset={1800} />
+        <SwayFlower
+          src={FlowerImg8}
+          xPos={isMobile ? "80%" : "57%"}
+          speed={-1550}
+          yOffset={isMobile ? 1600 : 1800}
+        />
         <SwayFlower src={leafImg} xPos="62%" speed={-950} yOffset={2150} />
-        <SwayFlower src={FlowerImg4} xPos="66%" speed={-1400} yOffset={1650} />
+        <SwayFlower
+          src={FlowerImg4}
+          xPos="66%"
+          speed={-1400}
+          yOffset={isMobile ? 1850 : 1650}
+        />
 
         {/* Group E: Mid Right (Dense Cluster) */}
         <SwayFlower src={FlowerImg7} xPos="72%" speed={-1050} yOffset={2300} />
