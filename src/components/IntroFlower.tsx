@@ -160,7 +160,7 @@ export default function IntroFlower() {
         <SwayFlower src={leafImg} xPos="45%" speed={-1800} yOffset={950} />
         <SwayFlower
           src={FlowerImg8}
-          xPos="60%"
+          xPos={isMobile ? "60%" : "70%"}
           speed={-1350}
           yOffset={isMobile ? 750 : 1200}
         />
@@ -169,7 +169,12 @@ export default function IntroFlower() {
 
         {/* Group 3 & 4 (Your previous center/low scatter) */}
         <SwayFlower src={FlowerImg3} xPos="35%" speed={-1500} yOffset={-300} />
-        <SwayFlower src={FlowerImg8} xPos="42%" speed={-850} yOffset={500} />
+        <SwayFlower
+          src={FlowerImg8}
+          xPos="42%"
+          speed={-850}
+          yOffset={isMobile ? 500 : 350}
+        />
         <SwayFlower src={FlowerImg6} xPos="58%" speed={-1700} yOffset={-100} />
         <SwayFlower src={FlowerImg1} xPos="65%" speed={-1150} yOffset={450} />
         <SwayFlower src={FlowerImg4} xPos="48%" speed={-1400} yOffset={400} />
@@ -210,7 +215,7 @@ export default function IntroFlower() {
           src={FlowerImg8}
           xPos={isMobile ? "80%" : "57%"}
           speed={-1550}
-          yOffset={isMobile ? 1600 : 1800}
+          yOffset={isMobile ? 1600 : 2200}
         />
         <SwayFlower src={leafImg} xPos="62%" speed={-950} yOffset={2150} />
         <SwayFlower
@@ -277,14 +282,18 @@ export default function IntroFlower() {
         <FlyingFlower src={FlowerImg8} xPos="71%" speed={-1300} />
         <FlyingFlower src={FlowerImg2} xPos="73.5%" speed={-450} />
         <FlyingFlower src={FlowerImg5} xPos="76%" speed={-1050} />
-        <FlyingFlower src={FlowerImg4} xPos="78.5%" speed={-680} />
 
         {/* --- Section 5: Far Right (81% - 100%) --- */}
-        <FlyingFlower src={FlowerImg} xPos="81%" speed={-550} />
-        <FlyingFlower src={FlowerImg1} xPos="83.5%" speed={-880} />
-        <FlyingFlower src={FlowerImg7} xPos="86%" speed={-1050} />
-        <FlyingFlower src={FlowerImg3} xPos="88.5%" speed={-1250} />
-        <FlyingFlower src={FlowerImg5} xPos="80%" speed={-900} />
+        {isDesktop && (
+          <>
+            <FlyingFlower src={FlowerImg4} xPos="78.5%" speed={-680} />
+            <FlyingFlower src={FlowerImg} xPos="81%" speed={-550} />
+            <FlyingFlower src={FlowerImg1} xPos="83.5%" speed={-880} />
+            <FlyingFlower src={FlowerImg7} xPos="86%" speed={-1050} />
+            <FlyingFlower src={FlowerImg3} xPos="88.5%" speed={-1250} />
+            <FlyingFlower src={FlowerImg5} xPos="80%" speed={-900} />
+          </>
+        )}
         {/* <FlyingFlower src={FlowerImg4} xPos="93.5%" speed={-750} />
         <FlyingFlower src={FlowerImg1} xPos="96%" speed={-1200} />
         <FlyingFlower src={FlowerImg6} xPos="98.5%" speed={-990} /> */}
