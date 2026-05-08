@@ -142,6 +142,7 @@ function Digit({ value, fontSize, tint, fontFamily }) {
       display: "flex",
       justifyContent: "center",
     },
+    class: "gold-text",
     children: /*#__PURE__*/ _jsx(AnimatePresence, {
       mode: "popLayout",
       initial: false,
@@ -152,7 +153,7 @@ function Digit({ value, fontSize, tint, fontFamily }) {
             fontSize: fontSize,
             lineHeight: 1,
             color: tint,
-            position: "absolute",
+            // position: "absolute",
             fontFamily: `"${fontFamily}", sans-serif`,
             fontWeight: "inherit",
           },
@@ -179,7 +180,8 @@ function Digit({ value, fontSize, tint, fontFamily }) {
   }
   return null;
 };
-/* --- STYLES --- */ const containerStyle = {
+/* --- STYLES --- */
+const containerStyle = {
   display: "flex",
   justifyContent: "center",
   alignItems: "flex-start",
@@ -198,30 +200,14 @@ const separatorStyle = {
   marginTop: "-2px",
 };
 const labelStyle = {
-  fontSize: "40px",
   fontWeight: 600,
+  fontSize: "0.8rem",
   letterSpacing: "1px",
   textTransform: "uppercase",
   marginTop: "6px",
   textAlign: "center",
 }; /* --- PROPERTY CONTROLS --- */ // The curated list of Google Fonts
-const fontOptions = [
-  "Inter",
-  "Roboto",
-  "Poppins",
-  "DM Sans",
-  "Oswald",
-  "Montserrat",
-  "Open Sans",
-  "Lato",
-  "Playfair Display",
-  "Nunito",
-  "Raleway",
-  "Bebas Neue",
-  "Anton",
-  "Fraunces",
-  "Space Mono",
-];
+
 // addPropertyControls(ProCountdown, {
 //   targetDate: {
 //     type: ControlType.Date,
@@ -271,15 +257,3 @@ const fontOptions = [
 //     defaultValue: "#888888",
 //   },
 // });
-export const __FramerMetadata__ = {
-  exports: {
-    default: {
-      type: "reactComponent",
-      name: "ProCountdown",
-      slots: [],
-      annotations: { framerSupported: "", framerContractVersion: "1" },
-    },
-    __FramerMetadata__: { type: "variable" },
-  },
-};
-//# sourceMappingURL=./Count_Down.map

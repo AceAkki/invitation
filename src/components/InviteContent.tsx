@@ -2,8 +2,14 @@ import { motion } from "framer-motion";
 import GaneshaImg from "../assets/ganesha.png";
 import ArchBG from "../assets/rose-arc.png";
 import FrameSquare from "../assets/frameSquare.png";
+import ProCountdown from "../Countdown";
+import useResponsiveValues from "../hooks/useResponsiveValues";
 
 const InviteContent = () => {
+  const { width, height } = useResponsiveValues();
+  let isMobile = width < 1080;
+  let isDesktop = width > 1080;
+  let newDate = new Date("2026-06-27");
   return (
     <div className="card-layout">
       <motion.div
@@ -39,18 +45,45 @@ const InviteContent = () => {
       <hr className="gold-divide" />
 
       <div className="date-wrap">
-        <div className="frame-content">
-          <p>Saturday, 27th June, 2026</p>
-          <p>12:30PM : 04:30PM</p>
+        <p className="date-title">Saturday, 27th June, 2026</p>
+        <p className="time-title">12:30PM : 04:30PM</p>
+      </div>
 
-          <br />
-          <strong>Central Railway Officers Hall</strong>
-          <p>
-            D/14, Dada Saheb Phalke Marg, Gautam Nagar, Dadar, Mumbai,
-            Maharashtra 400014
-          </p>
+      <hr className="gold-divide" />
+
+      <div className="add-wrap">
+        <div className="frame-content">
+          <div>
+            <br />
+            <strong>Central Railway Officers Hall</strong>
+            <p>
+              D/14, Dada Saheb Phalke Marg, Gautam Nagar, Dadar, Mumbai,
+              Maharashtra 400014
+            </p>
+          </div>
+          <div className="btn-wrapper">
+            <a
+              href="https://maps.app.goo.gl/unBYU8ysRFNPwEL69"
+              className="action-btn gold-bg"
+            >
+              Get Directions
+            </a>
+          </div>
         </div>
         <img src={FrameSquare} className="frame" alt="" />
+      </div>
+
+      <div className="countdown-wrapper">
+        <ProCountdown
+          targetDate={newDate}
+          tint="#FFFFFF"
+          labelColor="#888888"
+          fontSize={isMobile ? 25 : 60}
+          gap={isMobile ? 10 : 30}
+          showSeparators={false}
+          fontFamily="Inter"
+          fontWeight={700}
+        />
       </div>
     </div>
   );

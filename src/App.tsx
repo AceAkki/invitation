@@ -10,8 +10,6 @@ import Rotate from "./Test";
 
 import Frame from "./assets/frame.png";
 
-import ProCountdown from "./Countdown";
-
 import ResponsiveWeddingScene from "./components/IntroFlower";
 import InviteContent from "./components/InviteContent";
 
@@ -29,7 +27,6 @@ function App() {
     return () => cancelFrame(update);
   }, []);
 
-  let newDate = new Date("2026-06-27");
   return (
     <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
       <main>
@@ -39,16 +36,6 @@ function App() {
         <section style={{ paddingTop: "20vh" }}>
           <InviteContent />
         </section>
-        {/* <ProCountdown
-            targetDate={newDate}
-            tint="#FFFFFF"
-            labelColor="#888888"
-            fontSize={60}
-            gap={30}
-            showSeparators={false}
-            fontFamily="Inter"
-            fontWeight={700}
-          /> */}
 
         {/* <section>
           <ImageCircles />
