@@ -123,12 +123,12 @@ const InviteContent = () => {
 
       <hr className="gold-divide" />
 
-      <div className="date-wrap">
+      {/* <div className="date-wrap">
         <p>
           <strong>Contact</strong> <br />
           Rutik : 91 98988 87988
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };
