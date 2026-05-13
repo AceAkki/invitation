@@ -180,6 +180,7 @@ function Digit({
       overflow: "hidden",
       display: "flex",
       justifyContent: "center",
+      color: "#fcf6ba",
     },
     // class: "gold-text",
     children: /*#__PURE__*/ _jsx(AnimatePresence, {
@@ -191,7 +192,8 @@ function Digit({
           style: {
             fontSize: fontSize,
             lineHeight: 1,
-            color: tint,
+            color: "#fcf6ba",
+            // color: tint,
             // position: "absolute",
             fontFamily: `"${fontFamily}", sans-serif`,
             fontWeight: "inherit",
