@@ -34,19 +34,22 @@ export default function IntroFlowers() {
   useEffect(() => {
     if (swayFlowerRef.current !== null) {
       console.log(swayFlowerRef.current);
+      const container: React.RefObject<HTMLDivElement> = swayFlowerRef.current;
       Promise.all(
-        Array.from(swayFlowerRef.current.querySelectorAll("img")).map((img) => {
-          return new Promise((resolve) => {
-            setTimeout(() => {
-              if (img.complete) {
-                resolve(true);
-              } else {
-                img.onload = () => resolve(true);
-                img.onerror = () => resolve(false);
-              }
-            }, 10000);
-          });
-        }),
+        Array.from(container.querySelectorAll("img")).map(
+          (img): Promise<boolean> => {
+            return new Promise((resolve) => {
+              setTimeout(() => {
+                if (img.complete) {
+                  resolve(true);
+                } else {
+                  img.onload = () => resolve(true);
+                  img.onerror = () => resolve(false);
+                }
+              }, 10000);
+            });
+          },
+        ),
       ).then((values) => {
         console.log(values);
         !values.includes(false) ? setImgStatus(true) : setImgStatus(false);
