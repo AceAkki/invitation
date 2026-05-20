@@ -31,7 +31,7 @@ function App() {
   return (
     <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
       <main>
-        <section>{!imgStatus && <div> Waiting </div>}</section>
+        {!imgStatus && <section> Waiting </section>}
         <section>
           <IntroFlowers />
         </section>
