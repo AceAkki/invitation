@@ -1,9 +1,10 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { useShallow } from "zustand/react/shallow";
 import { useGlobalStore } from "../../hooks/useGlobalStore";
 
 import RoyalWeddingReveal from "./TitleReveal";
 import useResponsiveValues from "../../hooks/useResponsiveValues";
+import useImageLoadStatus from "../../hooks/useImageLoadStatus";
 import { FlyingFlower, SwayFlower } from "./useFlowerAnimation";
 
 import FlowerImg from "../../assets/flower.webp";
@@ -16,7 +17,7 @@ import FlowerImg6 from "../../assets/flower6.webp";
 import FlowerImg7 from "../../assets/flower7.webp";
 import FlowerImg8 from "../../assets/flower8.webp";
 import FlowerImg9 from "../../assets/flower9.webp";
-import leafImg from "../../assets/leaf.webp";
+// import leafImg from "../../assets/leaf.webp";
 import leafImgA from "../../assets/leafImg.webp";
 import leafImgB from "../../assets/leafImg0.webp";
 
@@ -25,15 +26,21 @@ export default function IntroFlowers() {
   let isMobile = width < 1080;
   let isDesktop = width > 1080;
 
-  const swayFlowerRef = useRef(null);
+  const swayFlowerRef = useRef<HTMLDivElement | null>(null);
   const { imgStatus, setImgStatus } = useGlobalStore(
     useShallow((state) => ({
       imgStatus: state.imgStatus,
       setImgStatus: state.setImgStatus,
     })),
   );
-  console.log(imgStatus);
 
+  const imageStatus = useImageLoadStatus({
+    ref: swayFlowerRef,
+    imgStatus: imgStatus,
+    setImgStatus: setImgStatus,
+  });
+
+  /*
   useEffect(() => {
     console.log(swayFlowerRef.current);
     if (swayFlowerRef.current !== null) {
@@ -59,6 +66,7 @@ export default function IntroFlowers() {
       });
     }
   }, [swayFlowerRef, imgStatus]);
+  */
   return (
     <>
       <section

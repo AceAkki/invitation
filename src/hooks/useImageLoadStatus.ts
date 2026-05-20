@@ -1,22 +1,28 @@
 import { useEffect } from "react";
 
-const useImageLoadStatus = (ref: React.RefObject<HTMLDivElement>) => {
+const useImageLoadStatus = ({
+  ref,
+  imgStatus,
+  setImgStatus,
+}: {
+  ref: React.RefObject<HTMLDivElement | null>;
+  imgStatus: boolean;
+  setImgStatus: (v: boolean) => void;
+}) => {
   useEffect(() => {
-    console.log(ref.current);
     if (ref.current !== null) {
-      const container: React.RefObject<HTMLDivElement> = ref.current;
       Promise.all(
-        Array.from(container.querySelectorAll("img")).map(
+        Array.from(ref.current.querySelectorAll("img")).map(
           (img: HTMLImageElement): Promise<boolean> => {
             return new Promise((resolve) => {
-              if (img.complete) {
-                resolve(true);
-              } else {
-                img.onload = () => resolve(true);
-                img.onerror = () => resolve(false);
-              }
-              // setTimeout(() => {
-              // }, 2000);
+              setTimeout(() => {
+                if (img.complete) {
+                  resolve(true);
+                } else {
+                  img.onload = () => resolve(true);
+                  img.onerror = () => resolve(false);
+                }
+              }, 2000);
             });
           },
         ),
@@ -27,3 +33,5 @@ const useImageLoadStatus = (ref: React.RefObject<HTMLDivElement>) => {
     }
   }, [ref, imgStatus]);
 };
+
+export default useImageLoadStatus;
