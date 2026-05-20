@@ -30,6 +30,7 @@ export default function IntroFlowers() {
       setImgStatus: state.setImgStatus,
     })),
   );
+  console.log(imgStatus);
 
   useEffect(() => {
     console.log(swayFlowerRef.current);
@@ -58,7 +59,6 @@ export default function IntroFlowers() {
   }, [swayFlowerRef, imgStatus]);
   return (
     <>
-      <section>{!imgStatus && <div> Waiting </div>}</section>
       <section
         style={{
           position: "relative",
@@ -69,6 +69,7 @@ export default function IntroFlowers() {
           overflowX: "hidden",
           visibility: imgStatus ? "visible" : "hidden",
         }}
+        ref={swayFlowerRef}
       >
         {/* --- EXISTING GROUPS (Top & Mid-Top) --- */}
         <SwayFlower
