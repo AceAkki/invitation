@@ -4,11 +4,11 @@ import type { LenisRef } from "lenis/react";
 import { cancelFrame, frame } from "framer-motion";
 import { useShallow } from "zustand/react/shallow";
 import { useGlobalStore } from "./hooks/useGlobalStore";
-
+import { motion } from "motion/react";
 import IntroFlowers from "./features/introSection/IntroFlowers";
 import InviteContent from "./features/mainSection/InviteContent";
 import { getParams } from "./utils";
-
+import { InvitationMessage } from "./features/introSection/InvitationMessage";
 import "./App.css";
 
 function App() {
@@ -24,7 +24,9 @@ function App() {
 
   const handleScroll = () => {
     mainRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    bufferRef.current?.remove();
+    setTimeout(() => {
+      bufferRef.current?.remove();
+    }, 1000);
   };
 
   useEffect(() => {
@@ -39,16 +41,21 @@ function App() {
   return (
     <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
       <main>
-        <section>
+        <section ref={bufferRef}>
           {
             <div className="invite-intro">
-              <p className="invite-into-msg">
+              <InvitationMessage currentParam={currentParam} />
+              {/* <motion.p className="invite-into-msg">
                 Dear {currentParam},<br />
                 You've been an important part of our journey, and we'd be
                 honored to have you witness our union and celebrate this joyful
                 new chapter with us.
-              </p>
-              <button onClick={handleScroll} disabled={!imgStatus}>
+              </motion.p> */}
+              <button
+                onClick={handleScroll}
+                disabled={!imgStatus}
+                className="action-btn"
+              >
                 View Invitation
               </button>
             </div>

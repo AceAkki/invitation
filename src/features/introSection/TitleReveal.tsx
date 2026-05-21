@@ -42,7 +42,7 @@ const RoyalWeddingReveal = () => {
       <motion.div
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
         className="title-container"
       >
         {/* Top Decorative Line */}

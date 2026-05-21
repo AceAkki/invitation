@@ -98,7 +98,7 @@ const InviteContent = () => {
           <div className="btn-wrapper">
             <a
               href="https://maps.app.goo.gl/unBYU8ysRFNPwEL69"
-              className="action-btn gold-bg"
+              className="action-btn"
               target="_blank"
             >
               Get Directions

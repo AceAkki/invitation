@@ -25,7 +25,9 @@
 }
 
 .invite-into-msg {
-  width: 50%;
+  font-size: 1.2rem;
+  font-weight: 200;
+  width: 80%;
 }
 
 .card-layout {
@@ -129,12 +131,21 @@
 }
 
 .action-btn {
-  color: #000;
+  border: 1px solid transparent;
+  background: #fcf6ba;
+  color: #0a2e2a;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
-  border-radius: 5rem;
-  padding: 0.5rem;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  transition: all 800ms ease-in-out;
+}
+
+.action-btn:hover {
+  border: 1px solid #feecac;
+  color: #fcf6ba;
+  background: transparent;
 }
 
 .countdown-wrapper {
@@ -192,6 +203,10 @@
 }
 
 @media screen and (min-width: 1080px) {
+  .invite-into-msg {
+    font-size: 1.5rem;
+    width: 50%;
+  }
   .card-layout {
     border-radius: 50% 50% 1rem 1rem / 20% 20% 0 0;
     margin: 0 15%;
