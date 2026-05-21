@@ -41,8 +41,8 @@ function App() {
       <main>
         <section>
           {
-            <div>
-              <p>
+            <div className="invite-intro">
+              <p className="invite-into-msg">
                 Dear {currentParam}, You've been an important part of our
                 journey, and we'd be honored to have you witness our union and
                 celebrate this joyful new chapter with us.
