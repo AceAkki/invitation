@@ -4,7 +4,7 @@ import type { LenisRef } from "lenis/react";
 import { cancelFrame, frame } from "framer-motion";
 import { useShallow } from "zustand/react/shallow";
 import { useGlobalStore } from "./hooks/useGlobalStore";
-import { motion } from "motion/react";
+
 import IntroFlowers from "./features/introSection/IntroFlowers";
 import InviteContent from "./features/mainSection/InviteContent";
 import { getParams } from "./utils";

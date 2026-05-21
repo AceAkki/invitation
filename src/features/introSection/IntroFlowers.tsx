@@ -39,6 +39,7 @@ export default function IntroFlowers() {
     imgStatus: imgStatus,
     setImgStatus: setImgStatus,
   });
+  console.log(imageStatus);
 
   /*
   useEffect(() => {

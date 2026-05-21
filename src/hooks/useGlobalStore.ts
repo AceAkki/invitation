@@ -7,5 +7,5 @@ interface GlobalStoreType {
 
 export const useGlobalStore = create<GlobalStoreType>()((set) => ({
   imgStatus: false,
-  setImgStatus: (newStatus) => set((state) => ({ imgStatus: newStatus })),
+  setImgStatus: (newStatus) => set(() => ({ imgStatus: newStatus })),
 }));
