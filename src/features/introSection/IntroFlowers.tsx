@@ -5,7 +5,7 @@ import { useGlobalStore } from "../../hooks/useGlobalStore";
 import RoyalWeddingReveal from "./TitleReveal";
 import useResponsiveValues from "../../hooks/useResponsiveValues";
 import useImageLoadStatus from "../../hooks/useImageLoadStatus";
-import { FlyingFlower, SwayFlower } from "./useFlowerAnimation";
+import { FlyingFlower, SwayFlower } from "./FlowerAnimation";
 
 import FlowerImg from "../../assets/flower.webp";
 import FlowerImg1 from "../../assets/flower1.webp";

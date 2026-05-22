@@ -83,3 +83,13 @@
 .countdown-wrapper {
   margin: 2rem 1rem;
 }
+
+@media screen and (min-width: 1080px) {
+  .date-title {
+    font-size: 1.5rem;
+  }
+
+  .time-title {
+    font-size: 1.2rem;
+  }
+}

@@ -38,7 +38,7 @@ const RoyalWeddingReveal = () => {
   };
 
   return (
-    <div className="title-wrapper ">
+    <div className="title-wrapper">
       <motion.div
         variants={containerVariants}
         initial="hidden"
