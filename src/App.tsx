@@ -16,6 +16,7 @@ function App() {
   let bufferRef = useRef<HTMLDivElement | null>(null);
   const mainRef = useRef<HTMLDivElement | null>(null);
   const currentParam = getParams();
+
   const { imgStatus } = useGlobalStore(
     useShallow((state) => ({
       imgStatus: state.imgStatus,
