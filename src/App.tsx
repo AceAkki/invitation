@@ -41,7 +41,6 @@ function App() {
     frame.update(update, true);
     return () => cancelFrame(update);
   }, []);
-  console.log(currentParam !== null && !isDirect, currentParam, isDirect);
 
   return (
     <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
