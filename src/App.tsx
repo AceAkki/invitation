@@ -16,7 +16,7 @@ function App() {
   let bufferRef = useRef<HTMLDivElement | null>(null);
   const mainRef = useRef<HTMLDivElement | null>(null);
   const currentParam = getParams();
-
+  const isDirect = currentParam === "direct";
   const { imgStatus } = useGlobalStore(
     useShallow((state) => ({
       imgStatus: state.imgStatus,
@@ -33,7 +33,7 @@ function App() {
   };
 
   useEffect(() => {
-    document.body.classList.add("scrollBlock");
+    if (!isDirect) document.body.classList.add("scrollBlock");
     function update(data: { timestamp: number }) {
       const time = data.timestamp;
       lenisRef.current?.lenis?.raf(time);
@@ -41,32 +41,35 @@ function App() {
     frame.update(update, true);
     return () => cancelFrame(update);
   }, []);
+  console.log(currentParam !== null && !isDirect, currentParam, isDirect);
 
   return (
     <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
       <main>
-        {currentParam ? (
+        {currentParam !== null ? (
           <>
-            <section ref={bufferRef}>
-              {
-                <div className="invite-intro">
-                  <InvitationMessage currentParam={currentParam} />
-                  {/* <motion.p className="invite-into-msg">
+            {!isDirect && (
+              <section ref={bufferRef}>
+                {
+                  <div className="invite-intro">
+                    <InvitationMessage currentParam={currentParam} />
+                    {/* <motion.p className="invite-into-msg">
                     Dear {currentParam},<br />
                     You've been an important part of our journey, and we'd be
                     honored to have you witness our union and celebrate this joyful
                     new chapter with us.
                   </motion.p> */}
-                  <button
-                    onClick={handleScroll}
-                    disabled={!imgStatus}
-                    className="action-btn"
-                  >
-                    View Invitation
-                  </button>
-                </div>
-              }
-            </section>
+                    <button
+                      onClick={handleScroll}
+                      disabled={!imgStatus}
+                      className="action-btn"
+                    >
+                      View Invitation
+                    </button>
+                  </div>
+                }
+              </section>
+            )}
             <section ref={mainRef}>
               <IntroFlowers />
             </section>
