@@ -45,32 +45,42 @@ function App() {
   return (
     <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
       <main>
-        <section ref={bufferRef}>
-          {
+        {currentParam ? (
+          <>
+            <section ref={bufferRef}>
+              {
+                <div className="invite-intro">
+                  <InvitationMessage currentParam={currentParam} />
+                  {/* <motion.p className="invite-into-msg">
+                    Dear {currentParam},<br />
+                    You've been an important part of our journey, and we'd be
+                    honored to have you witness our union and celebrate this joyful
+                    new chapter with us.
+                  </motion.p> */}
+                  <button
+                    onClick={handleScroll}
+                    disabled={!imgStatus}
+                    className="action-btn"
+                  >
+                    View Invitation
+                  </button>
+                </div>
+              }
+            </section>
+            <section ref={mainRef}>
+              <IntroFlowers />
+            </section>
+            <section style={{ paddingTop: "20vh" }}>
+              <InviteContent />
+            </section>
+          </>
+        ) : (
+          <section>
             <div className="invite-intro">
-              <InvitationMessage currentParam={currentParam} />
-              {/* <motion.p className="invite-into-msg">
-                Dear {currentParam},<br />
-                You've been an important part of our journey, and we'd be
-                honored to have you witness our union and celebrate this joyful
-                new chapter with us.
-              </motion.p> */}
-              <button
-                onClick={handleScroll}
-                disabled={!imgStatus}
-                className="action-btn"
-              >
-                View Invitation
-              </button>
+              <p>Something went wrong. Please try again.</p>
             </div>
-          }
-        </section>
-        <section ref={mainRef}>
-          <IntroFlowers />
-        </section>
-        <section style={{ paddingTop: "20vh" }}>
-          <InviteContent />
-        </section>
+          </section>
+        )}
       </main>
     </ReactLenis>
   );
