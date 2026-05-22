@@ -1,0 +1,85 @@
+.ganesha-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.ganesha-img {
+  width: 100px;
+  height: 100px;
+}
+
+.parents-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 5rem 1.5rem 3rem;
+}
+
+.parent-name {
+  font-size: 1.1rem;
+}
+
+.parents-wrap p {
+  font-size: 0.9rem;
+}
+
+.couple-wrap {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 1.5rem 3rem;
+}
+
+.date-wrap,
+.add-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.date-title {
+  font-size: 1.2rem;
+}
+
+.time-title {
+  font-size: 1rem;
+}
+
+.name-title {
+  font-family: "Feeling Passionate";
+  font-size: 5rem;
+  /* line-height: 5rem;
+  margin: 1rem; */
+}
+
+.name-sub-title {
+  font-family: "Feeling Passionate";
+  font-size: 3rem;
+  margin: 0;
+}
+
+.btn-wrapper {
+  margin: 1.5rem 1rem;
+}
+
+.action-btn {
+  border: 1px solid transparent;
+  background: #feecac;
+  color: #0a2e2a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  transition: all 800ms ease-in-out;
+}
+
+.action-btn:hover {
+  border: 1px solid #feecac;
+  color: #fcf6ba;
+  background: transparent;
+}
+
+.countdown-wrapper {
+  margin: 2rem 1rem;
+}

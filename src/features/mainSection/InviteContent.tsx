@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import GaneshaImg from "../../assets/ganesha.png";
 import FrameSquare from "../../assets/frameSquare.webp";
-import ProCountdown from "../introSection/Countdown";
+import ProCountdown from "./Countdown";
 import useResponsiveValues from "../../hooks/useResponsiveValues";
-import CoupleWrap from "../introSection/CoupleWrap";
+import CoupleWrap from "./CoupleWrap";
 
 const InviteContent = () => {
   const { width } = useResponsiveValues();
