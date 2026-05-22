@@ -6,6 +6,7 @@ import useResponsiveValues from "../../hooks/useResponsiveValues";
 
 import GaneshaImg from "../../assets/ganesha.png";
 import FrameSquare from "../../assets/frameSquare.webp";
+import "./inviteContent.css";
 
 const InviteContent = () => {
   const { width } = useResponsiveValues();

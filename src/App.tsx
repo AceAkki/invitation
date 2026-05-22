@@ -24,6 +24,8 @@ function App() {
   );
 
   const handleScroll = () => {
+    if (document.body.classList.contains("scrollBlock"))
+      document.body.classList.remove("scrollBlock");
     mainRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     setTimeout(() => {
       bufferRef.current?.remove();
@@ -31,6 +33,7 @@ function App() {
   };
 
   useEffect(() => {
+    document.body.classList.add("scrollBlock");
     function update(data: { timestamp: number }) {
       const time = data.timestamp;
       lenisRef.current?.lenis?.raf(time);
