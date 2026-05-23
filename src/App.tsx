@@ -38,7 +38,7 @@ function App() {
   };
 
   useEffect(() => {
-    if (!isDirect) document.body.classList.add("scrollBlock");
+    document.body.classList.add("scrollBlock");
     function update(data: { timestamp: number }) {
       const time = data.timestamp;
       lenisRef.current?.lenis?.raf(time);
@@ -76,6 +76,7 @@ function App() {
                 )}
               </section>
             }
+            {/* its direct and imgStatus is cleared then scroll to elem */}
             {isDirect && imgStatus && handleScroll()}
 
             <>
