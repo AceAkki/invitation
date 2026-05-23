@@ -5,6 +5,7 @@ import { cancelFrame, frame } from "framer-motion";
 import { useShallow } from "zustand/react/shallow";
 import { useGlobalStore } from "./hooks/useGlobalStore";
 
+import Loader from "./components/Loader";
 import IntroFlowers from "./features/introSection/IntroFlowers";
 import InviteContent from "./features/mainSection/InviteContent";
 import { getParams } from "./utils";
@@ -26,10 +27,14 @@ function App() {
   const handleScroll = () => {
     if (document.body.classList.contains("scrollBlock"))
       document.body.classList.remove("scrollBlock");
-    mainRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    scrollToMain();
     setTimeout(() => {
       bufferRef.current?.remove();
     }, 1000);
+  };
+
+  const scrollToMain = () => {
+    mainRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   useEffect(() => {
@@ -47,9 +52,9 @@ function App() {
       <main>
         {currentParam !== null ? (
           <>
-            {!isDirect && (
+            {
               <section ref={bufferRef}>
-                {
+                {!isDirect ? (
                   <div className="invite-intro">
                     <InvitationMessage currentParam={currentParam} />
                     {/* <motion.p className="invite-into-msg">
@@ -66,15 +71,21 @@ function App() {
                       View Invitation
                     </button>
                   </div>
-                }
+                ) : (
+                  <Loader />
+                )}
               </section>
-            )}
-            <section ref={mainRef}>
-              <IntroFlowers />
-            </section>
-            <section style={{ paddingTop: "20vh" }}>
-              <InviteContent />
-            </section>
+            }
+            {isDirect && imgStatus && handleScroll()}
+
+            <>
+              <section ref={mainRef}>
+                <IntroFlowers />
+              </section>
+              <section style={{ paddingTop: "20vh" }}>
+                <InviteContent />
+              </section>
+            </>
           </>
         ) : (
           <section>
