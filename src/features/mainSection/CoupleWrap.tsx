@@ -1,5 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-import ArchBG from "../../assets/rose-arc.webp";
+import ArchBG from "../../assets/rose-arc-new.png";
 
 // def
 
