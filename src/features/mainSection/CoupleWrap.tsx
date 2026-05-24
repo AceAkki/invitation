@@ -1,6 +1,8 @@
 import { motion, type Variants } from "framer-motion";
 import ArchBG from "../../assets/rose-arc.webp";
 
+// def
+
 export default function CoupleWrap() {
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -46,6 +48,7 @@ export default function CoupleWrap() {
       <motion.h1 className="name-title gold-text" variants={nameVariants}>
         Divyani
       </motion.h1>
+
       <motion.img
         src={ArchBG}
         className="frame"
