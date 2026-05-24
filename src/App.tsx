@@ -3,13 +3,14 @@ import { ReactLenis } from "lenis/react";
 import type { LenisRef } from "lenis/react";
 import { cancelFrame, frame } from "framer-motion";
 import { useShallow } from "zustand/react/shallow";
-import { useGlobalStore } from "./hooks/useGlobalStore";
 
 import Loader from "./components/Loader";
-import IntroFlowers from "./features/introSection/IntroFlowers";
-import InviteContent from "./features/mainSection/InviteContent";
+import IntroFlowers from "./components/introSection/IntroFlowers";
+import InviteContent from "./components/mainSection/InviteContent";
+import { InvitationMessage } from "./components/introSection/InvitationMessage";
+
+import { useGlobalStore } from "./hooks/useGlobalStore";
 import { getParams } from "./utils";
-import { InvitationMessage } from "./features/introSection/InvitationMessage";
 import "./App.css";
 
 function App() {
@@ -57,12 +58,6 @@ function App() {
                 {!isDirect ? (
                   <div className="invite-intro">
                     <InvitationMessage currentParam={currentParam} />
-                    {/* <motion.p className="invite-into-msg">
-                    Dear {currentParam},<br />
-                    You've been an important part of our journey, and we'd be
-                    honored to have you witness our union and celebrate this joyful
-                    new chapter with us.
-                  </motion.p> */}
                     <button
                       onClick={handleScroll}
                       disabled={!imgStatus}

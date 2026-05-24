@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import { useShallow } from "zustand/react/shallow";
-import { useGlobalStore } from "../../hooks/useGlobalStore";
 
 import RoyalWeddingReveal from "./TitleReveal";
+import { FlyingFlower, SwayFlower } from "./FlowerAnimation";
+import { useGlobalStore } from "../../hooks/useGlobalStore";
 import useResponsiveValues from "../../hooks/useResponsiveValues";
 import useImageLoadStatus from "../../hooks/useImageLoadStatus";
-import { FlyingFlower, SwayFlower } from "./FlowerAnimation";
 
 import FlowerImg from "../../assets/flower.webp";
 import FlowerImg1 from "../../assets/flower1.webp";

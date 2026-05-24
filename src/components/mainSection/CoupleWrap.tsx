@@ -1,8 +1,6 @@
 import { motion, type Variants } from "framer-motion";
 import ArchBG from "../../assets/rose-arc-new.png";
 
-// def
-
 export default function CoupleWrap() {
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
