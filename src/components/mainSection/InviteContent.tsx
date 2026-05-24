@@ -53,7 +53,7 @@ const InviteContent = () => {
           opacity: 1,
           filter: "blur(0px)",
           width: "40%",
-          transition: { duration: 0.9, ease: "easeInOut", delay: 1.2 },
+          transition: { duration: 0.9, ease: "easeInOut", delay: 0.2 },
         }}
         transition={{ duration: 0.9 }}
       />
@@ -83,7 +83,7 @@ const InviteContent = () => {
           opacity: 1,
           filter: "blur(0px)",
           width: "40%",
-          transition: { duration: 0.9, ease: "easeInOut", delay: 1.2 },
+          transition: { duration: 0.9, ease: "easeInOut", delay: 0.2 },
         }}
         transition={{ duration: 0.9 }}
       />
