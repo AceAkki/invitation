@@ -63,9 +63,9 @@
 }
 
 .action-btn {
-  border: 1px solid transparent;
-  background: #feecac;
-  color: #0a2e2a;
+  border: 1px solid #feecac;
+  background: transparent;
+  color: #fcf6ba;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
@@ -75,9 +75,9 @@
 }
 
 .action-btn:hover {
-  border: 1px solid #feecac;
-  color: #fcf6ba;
-  background: transparent;
+  border: 1px solid transparent;
+  background: #feecac;
+  color: #0a2e2a;
 }
 
 .countdown-wrapper {

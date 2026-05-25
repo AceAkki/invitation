@@ -1,5 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-import ArchBG from "../../assets/rose-arc-new.png";
+import ArchBG from "../../assets/rose-arc-new.webp";
 
 export default function CoupleWrap() {
   const containerVariants: Variants = {
@@ -26,7 +26,7 @@ export default function CoupleWrap() {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 2, delay: 0.6, ease: "easeOut" },
+      transition: { duration: 2, delay: 2, ease: "easeOut" },
     },
   };
 
