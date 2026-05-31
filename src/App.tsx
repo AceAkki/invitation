@@ -10,13 +10,14 @@ import InviteContent from "./components/mainSection/InviteContent";
 import { InvitationMessage } from "./components/introSection/InvitationMessage";
 
 import { useGlobalStore } from "./hooks/useGlobalStore";
-import { getParams, handleScroll, scrollToMain } from "./utils";
+import { getParams, handleScroll } from "./utils";
 import "./App.css";
 
 function App() {
   const lenisRef = useRef<LenisRef>(null);
   let bufferRef = useRef<HTMLDivElement | null>(null);
   const mainRef = useRef<HTMLDivElement | null>(null);
+  // const inviteRef = useRef<HTMLDivElement | null>(null);
   const currentParam = getParams();
   const isDirect = currentParam === "direct";
   const { imgStatus } = useGlobalStore(
@@ -77,7 +78,7 @@ function App() {
               <section ref={mainRef}>
                 <IntroFlowers />
               </section>
-              <section style={{ paddingTop: "20vh" }}>
+              <section className="padding-top-20">
                 <InviteContent />
               </section>
             </>

@@ -18,6 +18,10 @@
   width: 80%;
 }
 
+.padding-top-20 {
+  padding-top: 20vh;
+}
+
 .card-layout {
   /* background: radial-gradient(circle, #0a2e2a 0%, #021a2b 100%); */
   /* box-shadow:
