@@ -25,19 +25,6 @@ function App() {
     })),
   );
 
-  const handleScroll = () => {
-    if (document.body.classList.contains("scrollBlock"))
-      document.body.classList.remove("scrollBlock");
-    scrollToMain();
-    setTimeout(() => {
-      bufferRef.current?.remove();
-    }, 1000);
-  };
-
-  const scrollToMain = () => {
-    mainRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   useEffect(() => {
     document.body.classList.add("scrollBlock");
     function update(data: { timestamp: number }) {
@@ -59,7 +46,13 @@ function App() {
                   <div className="invite-intro">
                     <InvitationMessage currentParam={currentParam} />
                     <button
-                      onClick={handleScroll}
+                      onClick={() =>
+                        handleScroll({
+                          elemFocus: mainRef,
+                          elemRemove: bufferRef,
+                          shouldRemove: true,
+                        })
+                      }
                       disabled={!imgStatus}
                       className="action-btn"
                     >
@@ -72,7 +65,13 @@ function App() {
               </section>
             }
             {/* its direct and imgStatus is cleared then scroll to elem */}
-            {isDirect && imgStatus && handleScroll()}
+            {isDirect &&
+              imgStatus &&
+              handleScroll({
+                elemFocus: mainRef,
+                elemRemove: bufferRef,
+                shouldRemove: true,
+              })}
 
             <>
               <section ref={mainRef}>
