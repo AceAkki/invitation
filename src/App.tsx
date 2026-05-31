@@ -10,7 +10,7 @@ import InviteContent from "./components/mainSection/InviteContent";
 import { InvitationMessage } from "./components/introSection/InvitationMessage";
 
 import { useGlobalStore } from "./hooks/useGlobalStore";
-import { getParams } from "./utils";
+import { getParams, handleScroll, scrollToMain } from "./utils";
 import "./App.css";
 
 function App() {

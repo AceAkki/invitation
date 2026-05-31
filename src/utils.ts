@@ -27,3 +27,26 @@ export const getParams = () => {
   // console.log(urlParams, currentParam);
   return currentParam;
 };
+
+export const handleScroll = ({
+  elemFocus,
+  elemRemove,
+  shouldRemove,
+}: {
+  elemFocus: React.RefObject<HTMLDivElement | null>;
+  elemRemove: React.RefObject<HTMLDivElement | null>;
+  shouldRemove: boolean;
+}) => {
+  if (document.body.classList.contains("scrollBlock"))
+    document.body.classList.remove("scrollBlock");
+  scrollToMain(elemFocus);
+  if (shouldRemove) {
+    setTimeout(() => {
+      elemRemove.current?.remove();
+    }, 1000);
+  }
+};
+
+export const scrollToMain = (elem: React.RefObject<HTMLDivElement | null>) => {
+  elem.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+};
