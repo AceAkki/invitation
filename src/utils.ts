@@ -21,9 +21,9 @@ export async function checkImagesLoaded(
   return Promise.all(promises);
 }
 
-export const getParams = () => {
+export const getParams = (param: string) => {
   let urlParams = new URLSearchParams(window.location.search);
-  let currentParam = urlParams.get("guest");
+  let currentParam = urlParams.get(param);
   // console.log(urlParams, currentParam);
   return currentParam;
 };

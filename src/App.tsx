@@ -18,7 +18,7 @@ function App() {
   let bufferRef = useRef<HTMLDivElement | null>(null);
   const mainRef = useRef<HTMLDivElement | null>(null);
   // const inviteRef = useRef<HTMLDivElement | null>(null);
-  const currentParam = getParams();
+  const currentParam = getParams("access");
   const isDirect = currentParam === "direct";
   const { imgStatus } = useGlobalStore(
     useShallow((state) => ({
