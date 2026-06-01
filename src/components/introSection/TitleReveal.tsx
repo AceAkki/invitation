@@ -2,7 +2,6 @@ import { motion, type Variants } from "framer-motion";
 import "./css/titleReveal.css";
 
 const RoyalWeddingReveal = () => {
-  // Animation Variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -13,8 +12,6 @@ const RoyalWeddingReveal = () => {
       },
     },
   };
-
-  // filer blur issue on chrome
 
   const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0, filter: "blur(10px)" },
@@ -45,7 +42,6 @@ const RoyalWeddingReveal = () => {
         whileInView="visible"
         className="title-container"
       >
-        {/* Top Decorative Line */}
         <motion.div variants={lineVariants} className="title-line gold-bg" />
 
         <div className="text-group">
@@ -62,12 +58,7 @@ const RoyalWeddingReveal = () => {
           </motion.h1>
         </div>
 
-        {/* Bottom Decorative Line */}
         <motion.div variants={lineVariants} className="title-line gold-bg" />
-
-        {/* <motion.p variants={itemVariants} style={styles.subtext}>
-          SAVE THE DATE
-        </motion.p> */}
       </motion.div>
     </div>
   );
