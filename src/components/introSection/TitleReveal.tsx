@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import "./css/titleReveal.css";
 
 const RoyalWeddingReveal = () => {
+  let [showBtn, setShowBtn] = useState(false);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -34,6 +37,10 @@ const RoyalWeddingReveal = () => {
     },
   };
 
+  setTimeout(() => {
+    setShowBtn(true);
+  }, 20000);
+
   return (
     <div className="title-wrapper">
       <motion.div
@@ -60,6 +67,7 @@ const RoyalWeddingReveal = () => {
 
         <motion.div variants={lineVariants} className="title-line gold-bg" />
       </motion.div>
+      {showBtn && <div>Scroll Here</div>}
     </div>
   );
 };
