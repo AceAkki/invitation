@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import "./css/titleReveal.css";
 
@@ -37,9 +37,13 @@ const RoyalWeddingReveal = () => {
     },
   };
 
-  setTimeout(() => {
-    setShowBtn(true);
-  }, 20000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowBtn(true);
+    }, 20000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="title-wrapper">
