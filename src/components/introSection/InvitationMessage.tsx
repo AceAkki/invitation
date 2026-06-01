@@ -57,7 +57,7 @@ export function InvitationMessage({
       >
         {words.map((word, index) => (
           <motion.span key={index} variants={childVariants}>
-            {word}{" "}
+            {word}
           </motion.span>
         ))}
       </motion.p>
