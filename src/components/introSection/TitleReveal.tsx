@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { motion, type Variants } from "framer-motion";
+import { motion, type Variants } from "motion/react";
+import ScrollHint from "./ScrollHint";
 import "./css/titleReveal.css";
 
 const RoyalWeddingReveal = () => {
@@ -71,7 +72,7 @@ const RoyalWeddingReveal = () => {
 
         <motion.div variants={lineVariants} className="title-line gold-bg" />
       </motion.div>
-      {showBtn && <div>Scroll Down</div>}
+      {showBtn && <ScrollHint />}
     </div>
   );
 };
