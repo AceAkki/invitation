@@ -71,7 +71,7 @@ const RoyalWeddingReveal = () => {
 
         <motion.div variants={lineVariants} className="title-line gold-bg" />
       </motion.div>
-      {showBtn && <div>Scroll Here</div>}
+      {showBtn && <div>Scroll Down</div>}
     </div>
   );
 };
