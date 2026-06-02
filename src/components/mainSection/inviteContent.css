@@ -62,6 +62,7 @@
   margin: 1.5rem 1rem;
 }
 
+.scroll-btn,
 .action-btn {
   border: 1px solid #feecac;
   background: transparent;
@@ -78,6 +79,10 @@
   border: 1px solid transparent;
   background: #feecac;
   color: #0a2e2a;
+}
+
+.scroll-btn {
+  color: #feecac;
 }
 
 .countdown-wrapper {
