@@ -37,12 +37,13 @@ export const handleScroll = ({
   elemRemove: React.RefObject<HTMLDivElement | null>;
   shouldRemove: boolean;
 }) => {
-  if (document.body.classList.contains("scrollBlock"))
-    document.body.classList.remove("scrollBlock");
+  document.body.classList.remove("scrollBlock");
   scrollToMain(elemFocus);
+  // if (!document.body.classList.contains("scrollBlock"))
   if (shouldRemove) {
     setTimeout(() => {
-      elemRemove.current?.remove();
+      elemRemove.current?.remove?.();
+      window.scrollTo(0, 0);
     }, 1000);
   }
 };

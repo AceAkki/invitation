@@ -82,10 +82,12 @@
 }
 
 .scroll-btn {
-  color: #feecac;
+  color: #0a2e2a;
+  background: #feecac;
   position: absolute;
   bottom: 0;
   margin: 5rem;
+  z-index: 6;
 }
 
 .countdown-wrapper {
