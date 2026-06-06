@@ -41,7 +41,7 @@ const RoyalWeddingReveal = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowBtn(true);
-    }, 5000);
+    }, 7000);
 
     return () => clearTimeout(timer);
   }, []);
